@@ -2,16 +2,22 @@ package universe
 
 import (
 	"errors"
+
+	"github.com/dragon-master-5892/universe/cachers"
+	"github.com/dragon-master-5892/universe/loggers"
 )
 
 type ServiceInitParams struct {
-	broker *Broker
+	Broker *Broker
+	Cacher *cachers.Cacher
+	Logger *loggers.Logger
 }
 
 // Universe Service
 type Service struct {
-	name   string
-	broker *Broker
+	name    string
+	Broker  *Broker
+	Actions map[string]*Action
 }
 
 func (s *Service) GetName() string {
@@ -27,12 +33,33 @@ func (s *Service) SetName(name string) (*Service, error) {
 }
 
 func (s *Service) Init(initParams ServiceInitParams) *Service {
-	if initParams.broker != nil {
-		s.broker = initParams.broker
+	if initParams.Broker != nil {
+		s.Broker = initParams.Broker
 	}
+
+	if initParams.Cacher != nil {
+		s.Broker.Cacher = initParams.Cacher
+	}
+
+	if initParams.Logger != nil {
+		s.Broker.Logger = initParams.Logger
+	}
+
 	return s
 }
 
-func (s *Service) BrokerCall(action string, params interface{}) interface{} {
-	return s.broker.Call(action, params)
+func (s *Service) BrokerCall(action string, params map[string]interface{}) map[string]interface{} {
+	return s.Broker.Call(action, params)
+}
+
+func (s *Service) RegisterAction(action *Action) *Service {
+	s.Actions[action.Name] = action
+	return s
+}
+
+func (s *Service) RegisterActions(actions ...*Action) *Service {
+	for _, action := range actions {
+		s.Actions[action.Name] = action
+	}
+	return s
 }

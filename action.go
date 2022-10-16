@@ -1,5 +1,11 @@
 package universe
 
+type Param struct {
+}
+
 type Action struct {
-	service *Service
+	Name    string
+	Service *Service
+	Params  []Param
+	Handler func(*Context) interface{}
 }
