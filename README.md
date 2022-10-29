@@ -1,6 +1,6 @@
-# Universe Microservice Framework
+<img align="center" src="/public/logo/Universe3.png" alt="Universe Logo" width="250"/>
 
-<img align="right" src="/public/logo/Universe3.png" alt="Universe Logo" width="200"/>
+# Universe Microservice Framework
 
 ### **Universe** is a open-source microservice framework written in golang
 
