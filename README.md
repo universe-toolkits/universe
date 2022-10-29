@@ -1,4 +1,4 @@
-<img align="center" src="/public/logo/Universe3.png" alt="Universe Logo" width="250"/>
+<img align="right" src="/public/logo/Universe3.png" alt="Universe Logo" width="250"/>
 
 # Universe Microservice Framework
 
