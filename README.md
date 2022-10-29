@@ -2,7 +2,7 @@
 
 # Universe Microservice Framework
 
-### **Universe** is a open-source microservice framework written in golang
+### **Universe** is a open-source microservice framework for golang
 
 
 
