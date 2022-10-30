@@ -38,17 +38,17 @@ func (s *Service) Init(initParams ServiceInitParams) *Service {
 	}
 
 	if initParams.Cacher != nil {
-		s.Broker.Cacher = initParams.Cacher
+		s.Broker.Cacher = *initParams.Cacher
 	}
 
 	if initParams.Logger != nil {
-		s.Broker.Logger = initParams.Logger
+		s.Broker.Logger = *initParams.Logger
 	}
 
 	return s
 }
 
-func (s *Service) BrokerCall(action string, params map[string]interface{}) map[string]interface{} {
+func (s *Service) BrokerCall(action string, params map[string]interface{}) (map[string]interface{}, error) {
 	return s.Broker.Call(action, params)
 }
 
