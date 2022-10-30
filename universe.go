@@ -1,16 +1,9 @@
 package universe
 
-import (
-	"fmt"
-	"log"
-)
-
 type UniverseNode struct {
-}
-
-func Hello(name string) string {
-	log.Default().Printf("Hello %v", name)
-	return fmt.Sprintf("Hi, %v. Welcome to Universe!", name)
+	Id      string
+	Actions []string
+	Events  []string
 }
 
 func GetVersion() string {
