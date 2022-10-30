@@ -1,6 +1,8 @@
 package universe
 
 type Param struct {
+	Name string
+	Type *interface{}
 }
 
 type Action struct {
