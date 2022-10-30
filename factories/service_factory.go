@@ -1,7 +1,7 @@
 package factories
 
 import (
-	uni "github.com/dragon-master-5892/universe"
+	uni "github.com/universe-toolkits/universe"
 )
 
 func NewService(serviceName string) *uni.Service {

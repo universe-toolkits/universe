@@ -1,4 +1,4 @@
-module github.com/dragon-master-5892/universe
+module github.com/universe-toolkits/universe
 
 go 1.18
 

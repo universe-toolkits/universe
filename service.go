@@ -3,8 +3,8 @@ package universe
 import (
 	"errors"
 
-	"github.com/dragon-master-5892/universe/cachers"
-	"github.com/dragon-master-5892/universe/loggers"
+	"github.com/universe-toolkits/universe/cachers"
+	"github.com/universe-toolkits/universe/loggers"
 )
 
 type ServiceInitParams struct {
